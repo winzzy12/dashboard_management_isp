@@ -1,0 +1,15 @@
+# views/dashboard/.htaccess
+RewriteEngine On
+RewriteBase /views/dashboard/
+
+# Redirect to remove index.php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)/index\.php [NC]
+RewriteRule ^ %1/ [R=301,L]
+
+# If request is for directory, serve index.php
+DirectoryIndex index.php
+
+# Route all requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
