@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "nexanet_db";
-    private $username = "root";
-    private $password = "Nusan3T_Open";
+    private $db_name = "database_name";
+    private $username = "user";
+    private $password = "";
     public $conn;
 
     public function getConnection() {
